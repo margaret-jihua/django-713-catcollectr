@@ -2,19 +2,23 @@
 
 {% block content %}
 
-    <h1>{{ username }}'s collection:</h1>
+    <h2>{{ username }}'s collection:</h2>
 
-    {% for cat in cats  %}
-        <a href="/cats/{{cat.id}}">
-            <h3>{{ cat.name }}</h3>
-        </a>
-    {% endfor %}
+    <div class="list-group">
+        {% for cat in cats  %}
+        <div class="list-group-item">
+            <a href="/cats/{{cat.id}}">
+                <h3>{{ cat.name }}</h3>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 
-    <div>
-        <div>
+    <div class="list-group list-group-horizontal text-center">
+        <div class="list-group-item list-group-item-action flex-fill">
             <a href="/cats/create/">Adopt a new cat</a>
         </div>
-        <div>
+        <div class="list-group-item list-group-item-action flex-fill">
             <a href="/cattoys/create/">Make a new toy</a>
         </div>
     </div>

@@ -1,8 +1,34 @@
 h1 {
+    text-align: center;
     color: turquoise;
+    text-shadow: yellow 1px 1px;
+}
+
+a {
+    color: #40e0d0;
+    /* font-size: 1.5rem; */
+}
+
+a:hover {
+    text-decoration: none;
+    color: lightblue;
+    text-shadow: yellow 1px 1px;
 }
 
 footer {
+    margin-top: 50px;
     text-align: center;
     color: turquoise;
+    text-shadow: yellow 1px 1px;
+}
+
+.btn {
+    background-color: turquoise;
+    color: white;
+}
+
+.btn:hover {
+    text-decoration: none;
+    color: white;
+    text-shadow: white 1px 1px;
 }

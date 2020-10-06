@@ -1,15 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div>
-        <span>{{ cattoy.name }}</span>
-        <p>Color: {{ cattoy.color }}</p>
-        <p>Owned by:</p>
-        {% for cat in cattoy.cat_set.all %}
-            <p>{{cat.name}}</p>
-        {% empty %}
-            <p>Nobody Has This Toy</p>
-        {% endfor %}
+    
+    <div class="card text-center">
+        <div class="card-header">
+            <h5 class="card-title">{{ cattoy.name }}</h5>
+        </div>
+        <div class="card-body">
+            <p>Color: {{ cattoy.color }}</p>
+        </div>  
+            <div class="card-footer">
+                <p>Cats who own this toy:</p>
+                {% for cat in cattoy.cat_set.all %}
+                    <a class="card-link" href="/cats/{{cat.id}}">
+                        {{ cat.name }}
+                    </a>
+                {% empty %}
+                    <p>Nobody Has This Toy</p>
+                {% endfor %}                  
+        </div>
     </div>
 
 {% endblock %}

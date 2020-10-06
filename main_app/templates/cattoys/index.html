@@ -2,17 +2,18 @@
 
 {% block content %}
 
-    <h1>Cat Toy List</h1>
-
-    {% for cattoy in cattoys %}
-        <div>
-            <a href="{% url 'cattoys_show' cattoy.id %}">
-                <div class="card-content">
-                    <span>{{ cattoy.name }}</span>
-                    <p>Color: {{ cattoy.color }}</p>
-                </div>
-            </a>
+    <div class="list-group">
+        <div class="list-group-item">
+            <h2>Cat Toy List</h2>
         </div>
-    {% endfor %}
+        {% for cattoy in cattoys %}
+            <div class="list-group-item">
+                <a href="{% url 'cattoys_show' cattoy.id %}">
+                        <p>{{ cattoy.name }}</p>                        
+                </a>
+                <p>Color: {{ cattoy.color }}</p>
+            </div>
+        {% endfor %} 
+    </div>
 
 {% endblock %}
